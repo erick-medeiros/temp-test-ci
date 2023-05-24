@@ -34,8 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          sudo apt-get update
-          sudo apt-get install valgrind
+          which valgrind
+          sudo apt-get -qq update
+          sudo apt-get -qq install valgrind
   test:
     needs: build
     runs-on: ubuntu-latest
